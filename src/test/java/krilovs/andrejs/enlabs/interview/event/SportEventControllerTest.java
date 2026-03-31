@@ -110,6 +110,7 @@ class SportEventControllerTest {
                         .returnResult()
                         .getResponseBody();
 
+    assertNotNull(updated);
     assertEquals(SportEventStatus.ACTIVE, updated.getStatus());
   }
 
