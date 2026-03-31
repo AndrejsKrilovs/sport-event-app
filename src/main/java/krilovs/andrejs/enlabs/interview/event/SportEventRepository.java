@@ -2,6 +2,7 @@ package krilovs.andrejs.enlabs.interview.event;
 
 import org.springframework.stereotype.Repository;
 
+import java.util.List;
 import java.util.Optional;
 import java.util.UUID;
 import java.util.concurrent.ConcurrentHashMap;
@@ -20,7 +21,7 @@ public class SportEventRepository {
     return Optional.ofNullable(storage.get(id));
   }
 
-  public CopyOnWriteArrayList<SportEvent> findItems() {
+  public List<SportEvent> findItems() {
     return new CopyOnWriteArrayList<>(storage.values());
   }
 }

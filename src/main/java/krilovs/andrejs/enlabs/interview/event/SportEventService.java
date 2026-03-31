@@ -38,7 +38,7 @@ public class SportEventService {
 
     return repository.findItems()
                      .stream()
-                     .filter(e -> sportType == null || e.getSport().equalsIgnoreCase(sportType))
+                     .filter(e -> sportType == null || e.getSportType().equalsIgnoreCase(sportType))
                      .filter(e -> status == null || e.getStatus() == status)
                      .sorted(comparator)
                      .skip((long) page * size)
