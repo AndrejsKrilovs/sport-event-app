@@ -24,4 +24,8 @@ public class SportEventRepository {
   public List<SportEvent> findItems() {
     return new CopyOnWriteArrayList<>(storage.values());
   }
+
+  public void clearStorage() {
+    storage.clear();
+  }
 }
