@@ -89,6 +89,12 @@ GET /subscriptions
 
 ---
 
-## ▶️ Run
+## ▶️ Run as usual
 
 ./gradlew bootRun
+
+## 🐳 Run with Docker
+
+```bash
+docker build -t sport-events .
+docker run -p 8080:8080 sport-events
