@@ -75,6 +75,7 @@ class SportEventServiceTest {
     when(repository.findItems()).thenReturn(List.of(event, another));
     var result = service.getItems("football", null, 0, 10, "id", "asc");
     assertFalse(result.isEmpty());
+    assertEquals(1, result.size());
     assertEquals("football", result.getFirst().getSportType());
   }
 
@@ -88,6 +89,7 @@ class SportEventServiceTest {
     when(repository.findItems()).thenReturn(List.of(e1, e2));
     var result = service.getItems(null, null, 1, 1, "id", "asc");
     assertFalse(result.isEmpty());
+    assertEquals(1, result.size());
   }
 
   @Test

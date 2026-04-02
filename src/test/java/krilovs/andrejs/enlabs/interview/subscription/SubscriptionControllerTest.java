@@ -32,7 +32,6 @@ class SubscriptionControllerTest {
   @Test
   void shouldSendEventToEmitter() throws IOException {
     var emitter = spy(new SseEmitter());
-    controller = new SubscriptionController();
     controller.addSubscription();
     controller = new SubscriptionController() {{
       emitters.add(emitter);
