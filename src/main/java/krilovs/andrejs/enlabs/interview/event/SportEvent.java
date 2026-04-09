@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.Setter;
 
 import java.time.LocalDateTime;
+import java.util.StringJoiner;
 import java.util.UUID;
 
 @Getter
@@ -22,4 +23,17 @@ public class SportEvent {
   private SportEventStatus status;
   @Future(message = "Start time cannot be in past")
   private LocalDateTime startTime;
+
+  @Override
+  public String toString() {
+    return new StringJoiner(
+      ", ",
+      SportEvent.class.getSimpleName() + "[", "]"
+    ).add("id=" + id)
+     .add("name='" + name + "'")
+     .add("sportType='" + sportType + "'")
+     .add("status=" + status)
+     .add("startTime=" + startTime)
+     .toString();
+  }
 }
